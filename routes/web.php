@@ -32,6 +32,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Redirect
+Route::get('/', function() {
+    return redirect(route('home'));
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
